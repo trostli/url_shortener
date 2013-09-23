@@ -1,7 +1,11 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'sinatra/flash'
+require 'sinatra/redirect_with_flash'
 require './environments'
 require_relative './models/url'
+
+enable :sessions
 
 get '/' do
 	@new_url = URL.new
@@ -10,7 +14,12 @@ get '/' do
 end
 
 post '/' do
-	URL.create(url: params[:url])
+	url = URL.create(url: params[:url])
+	if url.save
+		redirect "/", :notice => 'Congrats! You got Shit.ly'
+	else
+		redirect "/", :error => 'Boo! Something went wrong. Try again.'
+	end
 	redirect '/'
 end
 
