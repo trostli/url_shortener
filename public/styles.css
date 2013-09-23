@@ -1,0 +1,26 @@
+body {
+	background-color: #252525;
+	color: white;
+	font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+h1 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 6em;
+	color: white;
+}
+
+h3 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 2em;
+	color: white;
+}
+
+a:link { 
+	color: white;
+}
+
+a:visited {
+	color: #ff4f00;
+	}

@@ -1,10 +1,13 @@
 <html>
 <head>
   <title>Shit.ly</title>
+  <link href="/styles.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,700' rel='stylesheet' type='text/css'>
 </head>
 	<body>
 	<center>
 		<h1>Shit.ly</h1>
+		<h3>Yet Another Link Shortener</h3>
 	</center>
 
 	<% if flash[:notice] %>
@@ -13,7 +16,7 @@
 	<% if flash[:error] %>
   	<p class="alert alert-error"><%= flash[:error] %>
 	<% end %> 
-	
+
   <%= yield %>
 </body>
 </html>
