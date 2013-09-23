@@ -9,7 +9,7 @@
 <ul>
 <% @urls.each do |url| %>
   <li>
-    <h4><a href="/<%= url.id %>">localhost:9393/<%= url.id %></a></h4>
+    <h4><a href="/<%= url.id %>">http://shitly.herokuapp.com/<%= url.id %></a></h4>
     <p> Original URL: <%= url.url %> </p>
     <p>Created: <%= url.created_at %></p>
   </li>
