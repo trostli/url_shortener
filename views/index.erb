@@ -1,0 +1,17 @@
+<center>	
+	<form action="/" method="post">
+	  <label for="Link">URL:</label>
+	  <input id="url_link" name="url" type="text" value="<%= @new_url.url %>" size="77"/>
+	   <input type="submit" value="Create!"/>
+	</form> 
+</center>
+
+<ul>
+<% @urls.each do |url| %>
+  <li>
+    <h4><a href="/<%= url.id %>">localhost:9393/<%= url.id %></a></h4>
+    <p> Original URL: <%= url.url %> </p>
+    <p>Created: <%= url.created_at %></p>
+  </li>
+<% end %>
+</ul>
