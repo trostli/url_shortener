@@ -1,0 +1,7 @@
+<ul>
+  <% if @new_url.errors.any? %>
+    <% @new_url.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+    <% end %>
+  <% end %>
+</ul>

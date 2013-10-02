@@ -6,6 +6,9 @@ require './environments'
 require_relative './models/url'
 
 enable :sessions
+after('/:id') do
+	@url.increment!
+end
 
 get '/' do
 	@new_url = URL.new
@@ -14,16 +17,16 @@ get '/' do
 end
 
 post '/' do
-	url = URL.create(url: params[:url])
-	if url.save
+	@new_url = URL.new(url: params[:url])
+	if @new_url.save
 		redirect "/", :notice => 'Congrats! You got Shit.ly'
 	else
-		redirect "/", :error => 'Boo! Something went wrong. Try again.'
+	 @urls = URL.order("created_at DESC")
+	 erb :index
 	end
-	redirect '/'
 end
 
 get '/:id' do
-	url = URL.find(params[:id]).url
-	redirect url
+	@url = URL.find(params[:id])
+	redirect @url.url
 end

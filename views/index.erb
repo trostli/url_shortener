@@ -1,9 +1,11 @@
-<center>	
+<center>
+  <%= erb :_errors %>
+
 	<form action="/" method="post">
 	  <label for="Link">URL:</label>
 	  <input id="url_link" name="url" type="text" value="<%= @new_url.url %>" size="77"/>
 	   <input type="submit" value="Create!"/>
-	</form> 
+	</form>
 </center>
 
 <ul>
@@ -12,6 +14,7 @@
     <h4><a href="/<%= url.id %>">http://shitly.herokuapp.com/<%= url.id %></a></h4>
     <p> Original URL: <%= url.url %> </p>
     <p>Created: <%= url.created_at %></p>
+    <p>Click Count: <%= url.click_count || 0 %></p>
   </li>
 <% end %>
 </ul>

@@ -10,12 +10,7 @@
 		<h3>Yet Another Link Shortener</h3>
 	</center>
 
-	<% if flash[:notice] %>
-  	<p class="alert alert-success"><%= flash[:notice] %>
-	<% end %>
-	<% if flash[:error] %>
-  	<p class="alert alert-error"><%= flash[:error] %>
-	<% end %> 
+	<%= erb :_flash %>
 
   <%= yield %>
 </body>
